@@ -31,6 +31,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsingInvokeMethodActivityIn
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsingSwitchActivityInSequenceWorkflow", "UsingSwitchActivityInSequenceWorkflow\UsingSwitchActivityInSequenceWorkflow.csproj", "{0A906CD7-020F-46AD-8945-E541DA56315B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsingParallelActivity", "UsingParallelActivity\UsingParallelActivity.csproj", "{2364F7BD-D846-4017-A3D0-1233E6B1E876}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -125,6 +127,12 @@ Global
 		{0A906CD7-020F-46AD-8945-E541DA56315B}.Release|Any CPU.ActiveCfg = Release|x86
 		{0A906CD7-020F-46AD-8945-E541DA56315B}.Release|x86.ActiveCfg = Release|x86
 		{0A906CD7-020F-46AD-8945-E541DA56315B}.Release|x86.Build.0 = Release|x86
+		{2364F7BD-D846-4017-A3D0-1233E6B1E876}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{2364F7BD-D846-4017-A3D0-1233E6B1E876}.Debug|x86.ActiveCfg = Debug|x86
+		{2364F7BD-D846-4017-A3D0-1233E6B1E876}.Debug|x86.Build.0 = Debug|x86
+		{2364F7BD-D846-4017-A3D0-1233E6B1E876}.Release|Any CPU.ActiveCfg = Release|x86
+		{2364F7BD-D846-4017-A3D0-1233E6B1E876}.Release|x86.ActiveCfg = Release|x86
+		{2364F7BD-D846-4017-A3D0-1233E6B1E876}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
