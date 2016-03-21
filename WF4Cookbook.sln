@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsingSwitchActivityInSequen
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsingParallelActivity", "UsingParallelActivity\UsingParallelActivity.csproj", "{2364F7BD-D846-4017-A3D0-1233E6B1E876}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsingBookmark", "UsingBookmark\UsingBookmark.csproj", "{F3450738-7795-4D39-9AAC-72201796F49D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -133,6 +135,12 @@ Global
 		{2364F7BD-D846-4017-A3D0-1233E6B1E876}.Release|Any CPU.ActiveCfg = Release|x86
 		{2364F7BD-D846-4017-A3D0-1233E6B1E876}.Release|x86.ActiveCfg = Release|x86
 		{2364F7BD-D846-4017-A3D0-1233E6B1E876}.Release|x86.Build.0 = Release|x86
+		{F3450738-7795-4D39-9AAC-72201796F49D}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{F3450738-7795-4D39-9AAC-72201796F49D}.Debug|x86.ActiveCfg = Debug|x86
+		{F3450738-7795-4D39-9AAC-72201796F49D}.Debug|x86.Build.0 = Debug|x86
+		{F3450738-7795-4D39-9AAC-72201796F49D}.Release|Any CPU.ActiveCfg = Release|x86
+		{F3450738-7795-4D39-9AAC-72201796F49D}.Release|x86.ActiveCfg = Release|x86
+		{F3450738-7795-4D39-9AAC-72201796F49D}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
