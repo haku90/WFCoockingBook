@@ -37,6 +37,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsingBookmark", "UsingBookm
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreateFileWriterActivity", "CreateFileWriterActivity\CreateFileWriterActivity.csproj", "{A45B452F-CD68-4284-86C9-055F134C0226}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreateSendEmailActivity", "CreateSendEmailActivity\CreateSendEmailActivity.csproj", "{455A2062-59A1-47D9-9F40-2D7635065F24}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -149,6 +151,12 @@ Global
 		{A45B452F-CD68-4284-86C9-055F134C0226}.Release|Any CPU.ActiveCfg = Release|x86
 		{A45B452F-CD68-4284-86C9-055F134C0226}.Release|x86.ActiveCfg = Release|x86
 		{A45B452F-CD68-4284-86C9-055F134C0226}.Release|x86.Build.0 = Release|x86
+		{455A2062-59A1-47D9-9F40-2D7635065F24}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{455A2062-59A1-47D9-9F40-2D7635065F24}.Debug|x86.ActiveCfg = Debug|x86
+		{455A2062-59A1-47D9-9F40-2D7635065F24}.Debug|x86.Build.0 = Debug|x86
+		{455A2062-59A1-47D9-9F40-2D7635065F24}.Release|Any CPU.ActiveCfg = Release|x86
+		{455A2062-59A1-47D9-9F40-2D7635065F24}.Release|x86.ActiveCfg = Release|x86
+		{455A2062-59A1-47D9-9F40-2D7635065F24}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
