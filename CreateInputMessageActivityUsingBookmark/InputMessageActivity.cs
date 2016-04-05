@@ -14,7 +14,7 @@ namespace CreateInputMessageActivityUsingBookmark
 
         public void OnResumeBookmark(NativeActivityContext context, Bookmark bookmark, object value)
         {
-            throw new System.NotImplementedException();
+            Result.Set(context, (T)value);
         }
 
         protected override bool CanInduceIdle => true;
