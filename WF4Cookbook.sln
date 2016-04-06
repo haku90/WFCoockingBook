@@ -41,6 +41,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreateSendEmailActivity", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreateInputMessageActivityUsingBookmark", "CreateInputMessageActivityUsingBookmark\CreateInputMessageActivityUsingBookmark.csproj", "{B4D776EA-0071-4515-AF37-121DBFAB0CBA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreateAsyncHttpGetActivity", "CreateAsyncHttpGetActivity\CreateAsyncHttpGetActivity.csproj", "{2B52083E-8BDD-403E-A205-43799E99788F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -165,6 +167,12 @@ Global
 		{B4D776EA-0071-4515-AF37-121DBFAB0CBA}.Release|Any CPU.ActiveCfg = Release|x86
 		{B4D776EA-0071-4515-AF37-121DBFAB0CBA}.Release|x86.ActiveCfg = Release|x86
 		{B4D776EA-0071-4515-AF37-121DBFAB0CBA}.Release|x86.Build.0 = Release|x86
+		{2B52083E-8BDD-403E-A205-43799E99788F}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{2B52083E-8BDD-403E-A205-43799E99788F}.Debug|x86.ActiveCfg = Debug|x86
+		{2B52083E-8BDD-403E-A205-43799E99788F}.Debug|x86.Build.0 = Debug|x86
+		{2B52083E-8BDD-403E-A205-43799E99788F}.Release|Any CPU.ActiveCfg = Release|x86
+		{2B52083E-8BDD-403E-A205-43799E99788F}.Release|x86.ActiveCfg = Release|x86
+		{2B52083E-8BDD-403E-A205-43799E99788F}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
