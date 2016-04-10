@@ -19,7 +19,7 @@ namespace CreateActivityDesignerForSendEmail
     {
         public SendEmailActivityDesigner()
         {
-            InitializeComponent();
+            //InitializeComponent();
         }
     }
 }

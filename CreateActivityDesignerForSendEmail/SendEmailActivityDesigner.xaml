@@ -1,9 +1,53 @@
-﻿<sap:ActivityDesigner x:Class="CreateActivityDesignerForSendEmail.SendEmailActivityDesigner"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:sap="clr-namespace:System.Activities.Presentation;assembly=System.Activities.Presentation"
-    xmlns:sapv="clr-namespace:System.Activities.Presentation.View;assembly=System.Activities.Presentation">
+﻿<sap:ActivityDesigner x:Class="ActivityLibrary.SendEmailActivityDesigner" 
+                      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                      xmlns:sap="clr-namespace:System.Activities.Presentation;assembly=System.Activities.Presentation"
+                      xmlns:sapv="clr-namespace:System.Activities.Presentation.View;assembly=System.Activities.Presentation"
+                      xmlns:sapc="clr-namespace:System.Activities.Presentation.Converters;assembly=System.Activities.Presentation"
+                      xmlns:s="clr-namespace:System;assembly=mscorlib">
+    <sap:ActivityDesigner.Resources>
+        <sapc:ArgumentToExpressionConverter x:Key="ArgumentToExpressionConverter"/>
+        <DataTemplate x:Key="Collapsed">
+            <StackPanel>
+                <TextBlock>This is the collapsed view</TextBlock>
+            </StackPanel>
+        </DataTemplate>
+        <DataTemplate x:Key="Expanded">
+            <StackPanel>
+                <Label Content="To"></Label>
+                <sapv:ExpressionTextBox 
+                        HintText="To:"
+                        OwnerActivity="{Binding Path=ModelItem}"
+                        Expression="{Binding Path=ModelItem.to,Mode=TwoWay,Converter={StaticResource ArgumentToExpressionConverter },ConverterParameter=In}"
+                        ExpressionType="s:String"/>
+                <Label Content="Subject:"></Label>
+                <sapv:ExpressionTextBox HintText="Subject" OwnerActivity="{Binding Path=ModelItem}" Expression="{Binding Path=ModelItem.subject, Mode=TwoWay, Converter={StaticResource ArgumentToExpressionConverter }, ConverterParameter=In}" ExpressionType="s:String"/>
+                <Label Content="Body:"></Label>
+                <sapv:ExpressionTextBox
+                        HintText="Body"
+                        OwnerActivity="{Binding Path=ModelItem}"
+                        Expression="{Binding Path=ModelItem.body,
+                        Mode=TwoWay,
+                        Converter={StaticResource ArgumentToExpressionConverter },
+                        ConverterParameter=In}"
+                        ExpressionType="s:String" Height="100" />
+            </StackPanel>
+        </DataTemplate>
+        <Style x:Key="ExpandOrCollapsedStyle"
+TargetType="{x:Type ContentPresenter}">
+            <Setter Property="ContentTemplate"
+Value="{DynamicResource Collapsed}"/>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding Path=ShowExpanded}"
+Value="true">
+                    <Setter Property="ContentTemplate"
+Value="{DynamicResource Expanded}"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+    </sap:ActivityDesigner.Resources>
     <Grid>
-        
+        <ContentPresenter Style="{DynamicResource
+ExpandOrCollapsedStyle}" Content="{Binding}" />
     </Grid>
 </sap:ActivityDesigner>
