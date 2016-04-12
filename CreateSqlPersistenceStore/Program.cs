@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Linq;
 using System.Activities;
+using System.Activities.DurableInstancing;
 using System.Activities.Statements;
+using System.Threading;
 
 namespace CreateSqlPersistenceStore
 {
@@ -10,8 +12,16 @@ namespace CreateSqlPersistenceStore
     {
         static void Main(string[] args)
         {
-            Activity workflow1 = new Workflow1();
-            WorkflowInvoker.Invoke(workflow1);
+            var sqlPersistenceDbConnectionString = @"Server=.\SQLEXPRESS;Initial Catalog=PersistenceDatabase;Integrated Security=True";
+
+            var sqlWFInstanceStore = new SqlWorkflowInstanceStore(sqlPersistenceDbConnectionString);
+            var waitHandler = new AutoResetEvent(initialState: false);
+            var wfApp = new WorkflowApplication(new Workflow1());
+            wfApp.InstanceStore = sqlWFInstanceStore;
+            wfApp.Unloaded = (arg) => { waitHandler.Set(); };
+            wfApp.PersistableIdle = (arg) => { return PersistableIdleAction.Unload; };
+            wfApp.Run();
+            waitHandler.WaitOne();
         }
     }
 }
