@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UseInArgument", "UseInArgument\UseInArgument.csproj", "{76632FD6-AE98-4E43-86AA-12D89570F740}"
 EndProject
@@ -52,6 +52,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreateFileTrackingParticipant", "CreateFileTrackingParticipant\CreateFileTrackingParticipant.csproj", "{026AEB49-DF6C-40BE-AB70-AE2C3592F8FC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreateSqlPersistenceStore", "CreateSqlPersistenceStore\CreateSqlPersistenceStore.csproj", "{82657026-8E9F-4AA2-8002-928826A27F7C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoadUpWorkflowFromPersistenceDb", "LoadUpWorkflowFromPersistenceDb\LoadUpWorkflowFromPersistenceDb.csproj", "{A6C57EA8-BA2C-481A-B42D-6DC47D5447C1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -213,6 +215,12 @@ Global
 		{82657026-8E9F-4AA2-8002-928826A27F7C}.Release|Any CPU.ActiveCfg = Release|x86
 		{82657026-8E9F-4AA2-8002-928826A27F7C}.Release|x86.ActiveCfg = Release|x86
 		{82657026-8E9F-4AA2-8002-928826A27F7C}.Release|x86.Build.0 = Release|x86
+		{A6C57EA8-BA2C-481A-B42D-6DC47D5447C1}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{A6C57EA8-BA2C-481A-B42D-6DC47D5447C1}.Debug|x86.ActiveCfg = Debug|x86
+		{A6C57EA8-BA2C-481A-B42D-6DC47D5447C1}.Debug|x86.Build.0 = Debug|x86
+		{A6C57EA8-BA2C-481A-B42D-6DC47D5447C1}.Release|Any CPU.ActiveCfg = Release|x86
+		{A6C57EA8-BA2C-481A-B42D-6DC47D5447C1}.Release|x86.ActiveCfg = Release|x86
+		{A6C57EA8-BA2C-481A-B42D-6DC47D5447C1}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
