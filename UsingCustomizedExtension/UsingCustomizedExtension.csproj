@@ -50,6 +50,8 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SimpleExtension.cs" />
+    <Compile Include="UseSimpleExtension.cs" />
   </ItemGroup>
   <ItemGroup>
     <XamlAppDef Include="Workflow1.xaml">

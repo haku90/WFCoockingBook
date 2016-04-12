@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Activities;
 using System.Activities.Statements;
+using System.Threading;
 
 namespace UsingCustomizedExtension
 {
@@ -10,8 +11,12 @@ namespace UsingCustomizedExtension
     {
         static void Main(string[] args)
         {
-            Activity workflow1 = new Workflow1();
-            WorkflowInvoker.Invoke(workflow1);
+            var waitHandler = new AutoResetEvent(initialState: false);
+            var wfApp = new WorkflowApplication(new Workflow1());
+            wfApp.Unloaded = (e) => { waitHandler.Set(); };
+            //wfApp.Extensions.Add(new SimpleExtension()); Dodajemy tu albo nadpisujemy CacheMetadata()
+            wfApp.Run();
+            waitHandler.WaitOne();
         }
     }
 }
