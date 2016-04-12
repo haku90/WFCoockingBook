@@ -55,6 +55,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreateSqlPersistenceStore",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoadUpWorkflowFromPersistenceDb", "LoadUpWorkflowFromPersistenceDb\LoadUpWorkflowFromPersistenceDb.csproj", "{A6C57EA8-BA2C-481A-B42D-6DC47D5447C1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsingPersistenceParticipant", "UsingPersistenceParticipant\UsingPersistenceParticipant.csproj", "{31252795-AFAD-42B2-9C98-B867B612F909}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -221,6 +223,12 @@ Global
 		{A6C57EA8-BA2C-481A-B42D-6DC47D5447C1}.Release|Any CPU.ActiveCfg = Release|x86
 		{A6C57EA8-BA2C-481A-B42D-6DC47D5447C1}.Release|x86.ActiveCfg = Release|x86
 		{A6C57EA8-BA2C-481A-B42D-6DC47D5447C1}.Release|x86.Build.0 = Release|x86
+		{31252795-AFAD-42B2-9C98-B867B612F909}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{31252795-AFAD-42B2-9C98-B867B612F909}.Debug|x86.ActiveCfg = Debug|x86
+		{31252795-AFAD-42B2-9C98-B867B612F909}.Debug|x86.Build.0 = Debug|x86
+		{31252795-AFAD-42B2-9C98-B867B612F909}.Release|Any CPU.ActiveCfg = Release|x86
+		{31252795-AFAD-42B2-9C98-B867B612F909}.Release|x86.ActiveCfg = Release|x86
+		{31252795-AFAD-42B2-9C98-B867B612F909}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
