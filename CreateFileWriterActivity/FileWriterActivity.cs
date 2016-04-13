@@ -1,4 +1,5 @@
-﻿using System.Activities;
+﻿using System;
+using System.Activities;
 using System.IO;
 using System.Threading;
 
@@ -15,7 +16,8 @@ namespace CreateFileWriterActivity
         protected override void Execute(CodeActivityContext context)
         {
             var lines = FileData.Get(context);
-            using (var file = new StreamWriter(FileName.Get(context)))
+            var path = $"{Environment.GetFolderPath(Environment.SpecialFolder.Desktop)}\\{FileName.Get(context)}";
+            using (var file = new StreamWriter(path))
             {
                 file.WriteLine(lines);
                 Thread.Sleep(5000);

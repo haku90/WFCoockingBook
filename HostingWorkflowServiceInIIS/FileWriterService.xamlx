@@ -1,0 +1,92 @@
+﻿<WorkflowService mc:Ignorable="sap sap2010 sads" p:TextExpression.Namespaces="{x:Reference __ReferenceID0}" p:TextExpression.References="{x:Reference __ReferenceID1}" ConfigurationName="FileWriterService" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#" sap2010:WorkflowViewState.IdRef="WorkflowService_1" Name="FileWriterService"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/servicemodel"
+ xmlns:c="clr-namespace:CreateFileWriterActivity;assembly=CreateFileWriterActivity"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:mca="clr-namespace:Microsoft.CSharp.Activities;assembly=System.Activities"
+ xmlns:p="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+ xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+ xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
+ xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TransactedReceiveScope sap2010:WorkflowViewState.IdRef="TransactedReceiveScope_1">
+    <p:TextExpression.Namespaces>
+      <sco:Collection x:TypeArguments="x:String" x:Name="__ReferenceID0">
+        <x:String>System</x:String>
+        <x:String>System.Collections.Generic</x:String>
+        <x:String>System.Data</x:String>
+        <x:String>System.Linq</x:String>
+        <x:String>System.Text</x:String>
+      </sco:Collection>
+    </p:TextExpression.Namespaces>
+    <p:TextExpression.References>
+      <sco:Collection x:TypeArguments="p:AssemblyReference" x:Name="__ReferenceID1">
+        <p:AssemblyReference>Microsoft.AI.Agent.Intercept</p:AssemblyReference>
+        <p:AssemblyReference>Microsoft.AI.DependencyCollector</p:AssemblyReference>
+        <p:AssemblyReference>Microsoft.AI.PerfCounterCollector</p:AssemblyReference>
+        <p:AssemblyReference>Microsoft.AI.ServerTelemetryChannel</p:AssemblyReference>
+        <p:AssemblyReference>Microsoft.AI.Web</p:AssemblyReference>
+        <p:AssemblyReference>Microsoft.AI.WindowsServer</p:AssemblyReference>
+        <p:AssemblyReference>Microsoft.ApplicationInsights</p:AssemblyReference>
+        <p:AssemblyReference>Microsoft.CSharp</p:AssemblyReference>
+        <p:AssemblyReference>System.Web.DynamicData</p:AssemblyReference>
+        <p:AssemblyReference>System.Drawing</p:AssemblyReference>
+        <p:AssemblyReference>System.Web.Entity</p:AssemblyReference>
+        <p:AssemblyReference>System.Web.ApplicationServices</p:AssemblyReference>
+        <p:AssemblyReference>System</p:AssemblyReference>
+        <p:AssemblyReference>System.Activities</p:AssemblyReference>
+        <p:AssemblyReference>System.Core</p:AssemblyReference>
+        <p:AssemblyReference>System.Data</p:AssemblyReference>
+        <p:AssemblyReference>System.Data.Entity</p:AssemblyReference>
+        <p:AssemblyReference>System.Runtime.Serialization</p:AssemblyReference>
+        <p:AssemblyReference>System.ServiceModel</p:AssemblyReference>
+        <p:AssemblyReference>System.ServiceModel.Activities</p:AssemblyReference>
+        <p:AssemblyReference>System.ServiceModel.Channels</p:AssemblyReference>
+        <p:AssemblyReference>System.Web</p:AssemblyReference>
+        <p:AssemblyReference>System.Xaml</p:AssemblyReference>
+        <p:AssemblyReference>System.Xml</p:AssemblyReference>
+        <p:AssemblyReference>System.Xml.Linq</p:AssemblyReference>
+        <p:AssemblyReference>mscorlib</p:AssemblyReference>
+        <p:AssemblyReference>CreateFileWriterActivity</p:AssemblyReference>
+        <p:AssemblyReference>HostingWorkflowServiceInIIS</p:AssemblyReference>
+      </sco:Collection>
+    </p:TextExpression.References>
+    <TransactedReceiveScope.Request>
+      <Receive CanCreateInstance="True" sap2010:WorkflowViewState.IdRef="Receive_1" OperationName="FileWriter" ServiceContractName="IFileWriter">
+        <ReceiveParametersContent>
+          <p:OutArgument x:TypeArguments="x:String" x:Key="fileDataIn">
+            <mca:CSharpReference x:TypeArguments="x:String">fileData</mca:CSharpReference>
+          </p:OutArgument>
+          <p:OutArgument x:TypeArguments="x:String" x:Key="fileNameIn">
+            <mca:CSharpReference x:TypeArguments="x:String">fileName</mca:CSharpReference>
+          </p:OutArgument>
+        </ReceiveParametersContent>
+      </Receive>
+    </TransactedReceiveScope.Request>
+    <TransactedReceiveScope.Variables>
+      <p:Variable x:TypeArguments="x:String" Name="fileData" />
+      <p:Variable x:TypeArguments="x:String" Name="fileName" />
+    </TransactedReceiveScope.Variables>
+    <c:FileWriterActivity sap2010:WorkflowViewState.IdRef="FileWriterActivity_1">
+      <c:FileWriterActivity.FileData>
+        <p:InArgument x:TypeArguments="x:String">
+          <mca:CSharpValue x:TypeArguments="x:String">fileData</mca:CSharpValue>
+        </p:InArgument>
+      </c:FileWriterActivity.FileData>
+      <c:FileWriterActivity.FileName>
+        <p:InArgument x:TypeArguments="x:String">
+          <mca:CSharpValue x:TypeArguments="x:String">fileName</mca:CSharpValue>
+        </p:InArgument>
+      </c:FileWriterActivity.FileName>
+    </c:FileWriterActivity>
+    <sads:DebugSymbol.Symbol>d05EOlxQcm9qZWN0c1xXRkNvb2NraW5nQm9va1xIb3N0aW5nV29ya2Zsb3dTZXJ2aWNlSW5JSVNcRmlsZVdyaXRlclNlcnZpY2UueGFtbHgHDANTHAEBNwdAEQEJRgVRHAECPQ09WwENOg06WwEKTgtOUQEGSQtJUQED</sads:DebugSymbol.Symbol>
+  </TransactedReceiveScope>
+  <sap2010:WorkflowViewState.ViewStateManager>
+    <sap2010:ViewStateManager>
+      <sap2010:ViewStateData Id="Receive_1" sap:VirtualizedContainerService.HintSize="255,86" />
+      <sap2010:ViewStateData Id="FileWriterActivity_1" sap:VirtualizedContainerService.HintSize="200,22" />
+      <sap2010:ViewStateData Id="TransactedReceiveScope_1" sap:VirtualizedContainerService.HintSize="281,343" />
+      <sap2010:ViewStateData Id="WorkflowService_1" sap:VirtualizedContainerService.HintSize="311,413" />
+    </sap2010:ViewStateManager>
+  </sap2010:WorkflowViewState.ViewStateManager>
+</WorkflowService>
