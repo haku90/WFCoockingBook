@@ -63,6 +63,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HostingWorkflowServiceInIIS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HostingWorkflowInAspNet", "HostingWorkflowInAspNet\HostingWorkflowInAspNet.csproj", "{AEEB4C6B-08D1-432D-8717-5E0CDC7CD78E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WfDesignerWpf", "WfDesignerWpf\WfDesignerWpf.csproj", "{6795CBA7-7AD8-4380-A318-AD20252D75FA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -284,6 +286,14 @@ Global
 		{AEEB4C6B-08D1-432D-8717-5E0CDC7CD78E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{AEEB4C6B-08D1-432D-8717-5E0CDC7CD78E}.Release|x86.ActiveCfg = Release|Any CPU
 		{AEEB4C6B-08D1-432D-8717-5E0CDC7CD78E}.Release|x86.Build.0 = Release|Any CPU
+		{6795CBA7-7AD8-4380-A318-AD20252D75FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6795CBA7-7AD8-4380-A318-AD20252D75FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6795CBA7-7AD8-4380-A318-AD20252D75FA}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{6795CBA7-7AD8-4380-A318-AD20252D75FA}.Debug|x86.Build.0 = Debug|Any CPU
+		{6795CBA7-7AD8-4380-A318-AD20252D75FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6795CBA7-7AD8-4380-A318-AD20252D75FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6795CBA7-7AD8-4380-A318-AD20252D75FA}.Release|x86.ActiveCfg = Release|Any CPU
+		{6795CBA7-7AD8-4380-A318-AD20252D75FA}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
