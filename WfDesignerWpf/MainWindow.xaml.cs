@@ -1,22 +1,14 @@
 ﻿using System;
+using System.Activities;
 using System.Activities.Core.Presentation;
 using System.Activities.Presentation;
 using System.Activities.Presentation.Toolbox;
 using System.Activities.Presentation.View;
 using System.Activities.Statements;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Activities.XamlIntegration;
+using System.IO;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using CreateFileWriterActivity;
 using Microsoft.Win32;
 
 namespace WfDesignerWpf
@@ -65,8 +57,10 @@ namespace WfDesignerWpf
             var toolboxCategory = new ToolboxCategory("Activities");
             var sequence = new ToolboxItemWrapper(typeof(Sequence));
             var writeLine = new ToolboxItemWrapper(typeof(WriteLine));
+            var fileWriter = new ToolboxItemWrapper(typeof(FileWriterActivity));
             toolboxCategory.Add(sequence);
             toolboxCategory.Add(writeLine);
+            toolboxCategory.Add(fileWriter);
             toolboxControl.Categories.Add(toolboxCategory);
             return toolboxControl;
         }
@@ -88,6 +82,39 @@ namespace WfDesignerWpf
             workflowDesignerPanel.Content = _workflowDesigner.View;
             WorkflowPropertyPanel.Content = _workflowDesigner.PropertyInspectorView;
         }
+
+        private void Save()
+        {
+            if (_workflowFilePathName.Equals("temp.xml"))
+            {
+                var saveDialog = new SaveFileDialog();
+                if (saveDialog.ShowDialog(this).Value)
+                {
+                    _workflowFilePathName = saveDialog.FileName;
+                    _workflowDesigner.Save(_workflowFilePathName);
+                    MessageBox.Show("Save Ok");
+                    Title = $"Workflow Designer - {_workflowFilePathName}";
+                }
+                else
+                {
+                    return;
+                }
+            }
+            else
+            {
+                _workflowDesigner.Save(_workflowFilePathName);
+                MessageBox.Show("Save ok");
+            }
+            LoadWorkflowFromFile(_workflowFilePathName);
+        }
+
+        private Activity GetActivity()
+        {
+            _workflowDesigner.Flush();
+            var stringReader = new StringReader(_workflowDesigner.Text);
+            var root = ActivityXamlServices.Load(stringReader);
+            return root;
+        }
                
         private void MenuItem_Click_NewWorkflow(object sender, RoutedEventArgs e)
         {
@@ -102,28 +129,45 @@ namespace WfDesignerWpf
             if (openFileDialog.ShowDialog(this).Value)
             {
                 _workflowFilePathName = openFileDialog.FileName;
+                LoadWorkflowFromFile(_workflowFilePathName);
             }
-            LoadWorkflowFromFile(_workflowFilePathName);
+            
         }
 
         private void MenuItem_Click_Save(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            Save();
         }
 
         private void MenuItem_Click_SaveAs(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            var saveDialog = new SaveFileDialog();
+            if (saveDialog.ShowDialog(this).Value)
+            {
+                _workflowFilePathName = saveDialog.FileName;
+                _workflowDesigner.Save(_workflowFilePathName);
+                MessageBox.Show("Save Ok");
+                Title = $"Workflow Designer - {_workflowFilePathName}";
+            }
         }
 
         private void MenuItem_Click_RunWorkflow(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            Save();
+            var activity = GetActivity();
+            var wfApp = new WorkflowApplication(activity);
+            var visualTracking = new VisualTracking(_workflowDesigner);
+            wfApp.Extensions.Add(visualTracking);
+            wfApp.Run();
         }
 
         private void TabItem_GotFocus_RefreshXamlBox(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            if (_workflowDesigner.Text != null)
+            {
+                _workflowDesigner.Flush();
+                xamlTextBox.Text = _workflowDesigner.Text;
+            }   
         }
     }
 }
