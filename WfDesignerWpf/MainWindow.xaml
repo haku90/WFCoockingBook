@@ -16,16 +16,8 @@
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="200"/>
         </Grid.ColumnDefinitions>
-        <GridSplitter HorizontalAlignment="Right"
-VerticalAlignment="Stretch"
-Width="5"
-Grid.Column="0"
-Grid.Row="1" />
-        <GridSplitter HorizontalAlignment="Left"
-VerticalAlignment="Stretch"
-Width="5"
-Grid.Column="2"
-Grid.Row="1" />
+        <GridSplitter HorizontalAlignment="Right" VerticalAlignment="Stretch" Width="5" Grid.Column="0" Grid.Row="1" />
+        <GridSplitter HorizontalAlignment="Left" VerticalAlignment="Stretch" Width="5" Grid.Column="2" Grid.Row="1" />
         <StackPanel Grid.ColumnSpan="3">
             <Menu Height="25" VerticalAlignment="Top">
                 <MenuItem Header="File">

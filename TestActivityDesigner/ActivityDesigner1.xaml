@@ -2,8 +2,16 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:sap="clr-namespace:System.Activities.Presentation;assembly=System.Activities.Presentation"
-    xmlns:sapv="clr-namespace:System.Activities.Presentation.View;assembly=System.Activities.Presentation">
-    <Grid>
-        
-    </Grid>
+    xmlns:sapv="clr-namespace:System.Activities.Presentation.View;assembly=System.Activities.Presentation"
+    xmlns:system="clr-namespace:System;assembly=mscorlib"
+    Height="220">
+    <StackPanel>
+        <Label x:Name="label" Content="Label" HorizontalAlignment="Left" Margin="82,59,0,0" VerticalAlignment="Top"/>
+        <sapv:ExpressionTextBox 
+                        HintText="Dupa:"
+                        OwnerActivity="{Binding Path=ModelItem}"
+                        Expression="{Binding Path=ModelItem.Text,Mode=TwoWay,Converter={StaticResource ArgumentToExpressionConverter },ConverterParameter=In}"
+                        ExpressionType="system:String"/>
+    </StackPanel>
+   
 </sap:ActivityDesigner>

@@ -10,6 +10,7 @@ using System.IO;
 using System.Windows;
 using CreateFileWriterActivity;
 using Microsoft.Win32;
+using TestActivityDesigner;
 
 namespace WfDesignerWpf
 {
@@ -54,14 +55,23 @@ namespace WfDesignerWpf
         private ToolboxControl GetToolboxControl()
         {
             var toolboxControl = new ToolboxControl();
-            var toolboxCategory = new ToolboxCategory("Activities");
+
+            var activitiesToolboxCategory = new ToolboxCategory("Activities");
             var sequence = new ToolboxItemWrapper(typeof(Sequence));
             var writeLine = new ToolboxItemWrapper(typeof(WriteLine));
             var fileWriter = new ToolboxItemWrapper(typeof(FileWriterActivity));
-            toolboxCategory.Add(sequence);
-            toolboxCategory.Add(writeLine);
-            toolboxCategory.Add(fileWriter);
-            toolboxControl.Categories.Add(toolboxCategory);
+            var ownActivity = new ToolboxItemWrapper(typeof(ActivityDesigner1));
+            activitiesToolboxCategory.Add(sequence);
+            activitiesToolboxCategory.Add(writeLine);
+            activitiesToolboxCategory.Add(fileWriter);
+            activitiesToolboxCategory.Add(ownActivity);
+
+            var documentActivitiesToolboxCategory = new ToolboxCategory("Documents");
+            var document = new ToolboxItemWrapper(typeof(Document));
+            documentActivitiesToolboxCategory.Add(document);
+
+            toolboxControl.Categories.Add(activitiesToolboxCategory);
+            toolboxControl.Categories.Add(documentActivitiesToolboxCategory);
             return toolboxControl;
         }
 
