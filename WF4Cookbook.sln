@@ -65,6 +65,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HostingWorkflowInAspNet", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WfDesignerWpf", "WfDesignerWpf\WfDesignerWpf.csproj", "{6795CBA7-7AD8-4380-A318-AD20252D75FA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HolidayRequest", "HolidayRequest\HolidayRequest.csproj", "{A61D6951-5590-4B1F-B1E7-0B4C596C3E92}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreateBookMarkWithPersistence", "CreateBookMarkWithPersistence\CreateBookMarkWithPersistence.csproj", "{15CD4302-07DA-4DCA-A66F-0386660E54BE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -294,6 +298,20 @@ Global
 		{6795CBA7-7AD8-4380-A318-AD20252D75FA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6795CBA7-7AD8-4380-A318-AD20252D75FA}.Release|x86.ActiveCfg = Release|Any CPU
 		{6795CBA7-7AD8-4380-A318-AD20252D75FA}.Release|x86.Build.0 = Release|Any CPU
+		{A61D6951-5590-4B1F-B1E7-0B4C596C3E92}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{A61D6951-5590-4B1F-B1E7-0B4C596C3E92}.Debug|Any CPU.Build.0 = Debug|x86
+		{A61D6951-5590-4B1F-B1E7-0B4C596C3E92}.Debug|x86.ActiveCfg = Debug|x86
+		{A61D6951-5590-4B1F-B1E7-0B4C596C3E92}.Debug|x86.Build.0 = Debug|x86
+		{A61D6951-5590-4B1F-B1E7-0B4C596C3E92}.Release|Any CPU.ActiveCfg = Release|x86
+		{A61D6951-5590-4B1F-B1E7-0B4C596C3E92}.Release|x86.ActiveCfg = Release|x86
+		{A61D6951-5590-4B1F-B1E7-0B4C596C3E92}.Release|x86.Build.0 = Release|x86
+		{15CD4302-07DA-4DCA-A66F-0386660E54BE}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{15CD4302-07DA-4DCA-A66F-0386660E54BE}.Debug|Any CPU.Build.0 = Debug|x86
+		{15CD4302-07DA-4DCA-A66F-0386660E54BE}.Debug|x86.ActiveCfg = Debug|x86
+		{15CD4302-07DA-4DCA-A66F-0386660E54BE}.Debug|x86.Build.0 = Debug|x86
+		{15CD4302-07DA-4DCA-A66F-0386660E54BE}.Release|Any CPU.ActiveCfg = Release|x86
+		{15CD4302-07DA-4DCA-A66F-0386660E54BE}.Release|x86.ActiveCfg = Release|x86
+		{15CD4302-07DA-4DCA-A66F-0386660E54BE}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
