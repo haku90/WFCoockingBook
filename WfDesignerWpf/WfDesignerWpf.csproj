@@ -66,6 +66,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Document.cs" />
+    <Compile Include="NewTypeWindow.xaml.cs">
+      <DependentUpon>NewTypeWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Services\GenerateDllService.cs" />
     <Compile Include="VisualTracking.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -79,6 +83,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="NewTypeWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <XamlAppDef Include="WFTemplate.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

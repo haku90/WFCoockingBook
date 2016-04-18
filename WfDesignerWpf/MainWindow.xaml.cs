@@ -37,7 +37,7 @@ namespace WfDesignerWpf
 
         private void ImportReferences()
         {
-            var path = @"D:\Projects\WFCoockingBook\WfDesignerWpf\Dlls";
+            var path = Properties.Settings.Default.DllsPath;
             var assemblies = new List<Assembly>();
             foreach (var dllFile in Directory.GetFiles(path, "*.dll"))
             {
@@ -161,6 +161,13 @@ namespace WfDesignerWpf
             
         }
 
+        private void MenuItem_Click_NewType(object sender, RoutedEventArgs e)
+        {
+            var newTypeWindow = new NewTypeWindow();
+            newTypeWindow.ShowDialog();
+            ImportReferences();
+        }
+
         private void MenuItem_Click_Save(object sender, RoutedEventArgs e)
         {
             Save();
@@ -196,5 +203,7 @@ namespace WfDesignerWpf
                 xamlTextBox.Text = _workflowDesigner.Text;
             }   
         }
+
+        
     }
 }
