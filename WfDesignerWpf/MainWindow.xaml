@@ -24,6 +24,8 @@
                     <MenuItem Header="New Workflow" Click="MenuItem_Click_NewWorkflow"/>
                     <MenuItem Header="Load Workflow" Click="MenuItem_Click_LoadWorkflow"/>
                     <Separator />
+                    <MenuItem Header="Add New Type"/>
+                    <Separator/>
                     <MenuItem Header="Save" Click="MenuItem_Click_Save"/>
                     <MenuItem Header="Save As" Click="MenuItem_Click_SaveAs"/>
                 </MenuItem>

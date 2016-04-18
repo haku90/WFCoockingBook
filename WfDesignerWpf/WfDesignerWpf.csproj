@@ -117,10 +117,6 @@
       <Project>{a45b452f-cd68-4284-86c9-055f134c0226}</Project>
       <Name>CreateFileWriterActivity</Name>
     </ProjectReference>
-    <ProjectReference Include="..\TestActivityDesigner\TestActivityDesigner.csproj">
-      <Project>{2af00a67-e6a4-4bff-b788-8e4ba40baa3d}</Project>
-      <Name>TestActivityDesigner</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

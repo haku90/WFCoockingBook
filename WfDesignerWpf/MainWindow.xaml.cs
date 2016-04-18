@@ -6,11 +6,14 @@ using System.Activities.Presentation.Toolbox;
 using System.Activities.Presentation.View;
 using System.Activities.Statements;
 using System.Activities.XamlIntegration;
+using System.Collections.Generic;
 using System.IO;
+using System.Reflection;
 using System.Windows;
+using System.Windows.Documents;
 using CreateFileWriterActivity;
 using Microsoft.Win32;
-using TestActivityDesigner;
+
 
 namespace WfDesignerWpf
 {
@@ -26,9 +29,23 @@ namespace WfDesignerWpf
         {
             InitializeComponent();
             new DesignerMetadata().Register();
+            ImportReferences();
             AddDesigner();
             AddTollBox();
             AddPropertyInspector();
+        }
+
+        private void ImportReferences()
+        {
+            var path = @"D:\Projects\WFCoockingBook\WfDesignerWpf\Dlls";
+            var assemblies = new List<Assembly>();
+            foreach (var dllFile in Directory.GetFiles(path, "*.dll"))
+            {
+                var assembly = Assembly.LoadFile(dllFile);
+                AppDomain.CurrentDomain.Load(assembly.GetName());
+                assemblies.Add(assembly);
+
+            }
         }
 
         private void AddDesigner()
@@ -60,11 +77,11 @@ namespace WfDesignerWpf
             var sequence = new ToolboxItemWrapper(typeof(Sequence));
             var writeLine = new ToolboxItemWrapper(typeof(WriteLine));
             var fileWriter = new ToolboxItemWrapper(typeof(FileWriterActivity));
-            var ownActivity = new ToolboxItemWrapper(typeof(ActivityDesigner1));
+            
             activitiesToolboxCategory.Add(sequence);
             activitiesToolboxCategory.Add(writeLine);
             activitiesToolboxCategory.Add(fileWriter);
-            activitiesToolboxCategory.Add(ownActivity);
+            
 
             var documentActivitiesToolboxCategory = new ToolboxCategory("Documents");
             var document = new ToolboxItemWrapper(typeof(Document));

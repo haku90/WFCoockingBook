@@ -10,8 +10,9 @@
         <sapv:ExpressionTextBox 
                         HintText="Dupa:"
                         OwnerActivity="{Binding Path=ModelItem}"
-                        Expression="{Binding Path=ModelItem.Text,Mode=TwoWay,Converter={StaticResource ArgumentToExpressionConverter },ConverterParameter=In}"
-                        ExpressionType="system:String"/>
+                        Expression="{Binding Path=ModelItem.Text, Mode=TwoWay}"/>
+            <!--Converter={StaticResource ArgumentToExpressionConverter }, ConverterParameter=In}"-->
+                        <!--ExpressionType="system:String"/>-->
     </StackPanel>
    
 </sap:ActivityDesigner>
