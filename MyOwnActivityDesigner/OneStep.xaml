@@ -4,6 +4,14 @@
     xmlns:sap="clr-namespace:System.Activities.Presentation;assembly=System.Activities.Presentation"
     xmlns:sapv="clr-namespace:System.Activities.Presentation.View;assembly=System.Activities.Presentation">
     <Grid>
-        <sapv:ExpressionTextBox x:Name="NameActivity" OwnerActivity="{Binding Path=ModelItem}" Expression="{Binding Path=ModelItem.Name, Mode=TwoWay}"></sapv:ExpressionTextBox>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="25"/>
+            
+        </Grid.RowDefinitions>
+        <Label Content="DocumentType" Grid.Row="0"/>
+        <sapv:TypePresenter Grid.Row="1" />
+        <!--<Label Content="Name"/>
+        <sapv:ExpressionTextBox x:Name="NameActivity" OwnerActivity="{Binding Path=ModelItem}" Expression="{Binding Path=ModelItem.Name, Mode=TwoWay}"></sapv:ExpressionTextBox>-->
     </Grid>
 </sap:ActivityDesigner>

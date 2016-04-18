@@ -125,6 +125,10 @@
       <Project>{a45b452f-cd68-4284-86c9-055f134c0226}</Project>
       <Name>CreateFileWriterActivity</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MyOwnActivityDesigner\MyOwnActivityDesigner.csproj">
+      <Project>{61a19a43-7c89-4823-86a8-f59d5d87dd32}</Project>
+      <Name>MyOwnActivityDesigner</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

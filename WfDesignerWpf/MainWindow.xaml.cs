@@ -77,11 +77,12 @@ namespace WfDesignerWpf
             var sequence = new ToolboxItemWrapper(typeof(Sequence));
             var writeLine = new ToolboxItemWrapper(typeof(WriteLine));
             var fileWriter = new ToolboxItemWrapper(typeof(FileWriterActivity));
-            
+            var ownActivity = new ToolboxItemWrapper(typeof(MyOwnActivityDesigner.OneStepActivity));
+
             activitiesToolboxCategory.Add(sequence);
             activitiesToolboxCategory.Add(writeLine);
             activitiesToolboxCategory.Add(fileWriter);
-            
+            activitiesToolboxCategory.Add(ownActivity);
 
             var documentActivitiesToolboxCategory = new ToolboxCategory("Documents");
             var document = new ToolboxItemWrapper(typeof(Document));

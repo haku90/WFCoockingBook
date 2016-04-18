@@ -12,11 +12,10 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="200" />
             <ColumnDefinition Width="*" />
-        </Grid.ColumnDefinitions>
+         </Grid.ColumnDefinitions>
         <GridSplitter HorizontalAlignment="Right" VerticalAlignment="Stretch" Width="5" Grid.Column="0" Grid.Row="1" />
-        <StackPanel Grid.ColumnSpan="3">
+        <StackPanel >
             <Menu Height="25" VerticalAlignment="Top">
                 <MenuItem Header="File">
                     <MenuItem Header="New Type" Click="MenuItem_Click_NewType"/>

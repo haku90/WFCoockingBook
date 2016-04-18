@@ -38,10 +38,18 @@ namespace WfDesignerWpf
 
         private void MenuItem_Click_SaveType(object sender, RoutedEventArgs e)
         {
-            var props = CreateProps();
-            var className = GetClassName();
-            var dllsPath = Properties.Settings.Default.DllsPath;
-            _generateDllService.Generate(className, props, dllsPath);
+            try
+            {
+                var props = CreateProps();
+                var className = GetClassName();
+                var dllsPath = Properties.Settings.Default.DllsPath;
+                _generateDllService.Generate(className, props, dllsPath);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Błąd", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            
         }
 
         private void MenuItem_Click_AddField(object sender, RoutedEventArgs e)
@@ -100,6 +108,8 @@ namespace WfDesignerWpf
                     }
                 }
             }
+            if(props.Count <= 0)
+                throw new Exception("Dodano puste pola");
             return props;
         }
 
@@ -119,6 +129,8 @@ namespace WfDesignerWpf
                 {
                     if (textBox.Name.Contains("NameType"))
                     {
+                        if(String.IsNullOrEmpty(textBox.Text))
+                            throw new Exception("Podaj nazwę typu!");
                         return textBox.Text;
                     }
                     
