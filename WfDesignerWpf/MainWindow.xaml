@@ -28,6 +28,7 @@
                     <Separator/>
                     <MenuItem Header="Save" Click="MenuItem_Click_Save"/>
                     <MenuItem Header="Save As" Click="MenuItem_Click_SaveAs"/>
+                    <MenuItem Header="Test Button" Click="MenuItem_Click_Test"/>
                 </MenuItem>
                 <MenuItem Header="Test">
                     <MenuItem Header="Run" Click="MenuItem_Click_RunWorkflow"/>

@@ -1,6 +1,5 @@
-﻿<Activity mc:Ignorable="sap sap2010 sads" x:Class="MyOwnActivityDesigner.TestOwnActivity" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#"
+﻿<Activity mc:Ignorable="sap sap2010 sads" x:Class="MyOwnActivityDesigner.TestOwnActivity" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#" sap2010:WorkflowViewState.IdRef="MyOwnActivityDesigner.TestOwnActivity_1"
  xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
- xmlns:local="clr-namespace:MyOwnActivityDesigner"
  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
  xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
  xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
@@ -37,12 +36,9 @@
       <AssemblyReference>MyOwnActivityDesigner</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <local:OneStepActivity Name="{x:Null}" sap2010:WorkflowViewState.IdRef="OneStepActivity_1" sads:DebugSymbol.Symbol="d0VEOlxQcm9qZWN0c1xXRkNvb2NraW5nQm9va1xNeU93bkFjdGl2aXR5RGVzaWduZXJcVGVzdE93bkFjdGl2aXR5LnhhbWwBKAMokwECAQE=" />
-  <sap2010:WorkflowViewState.IdRef>MyOwnActivityDesigner.TestOwnActivity_1</sap2010:WorkflowViewState.IdRef>
   <sap2010:WorkflowViewState.ViewStateManager>
     <sap2010:ViewStateManager>
-      <sap2010:ViewStateData Id="OneStepActivity_1" sap:VirtualizedContainerService.HintSize="200,62" />
-      <sap2010:ViewStateData Id="MyOwnActivityDesigner.TestOwnActivity_1" sap:VirtualizedContainerService.HintSize="240,142" />
+      <sap2010:ViewStateData Id="MyOwnActivityDesigner.TestOwnActivity_1" sap:VirtualizedContainerService.HintSize="440,440" />
     </sap2010:ViewStateManager>
   </sap2010:WorkflowViewState.ViewStateManager>
 </Activity>

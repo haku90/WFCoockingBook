@@ -7,11 +7,16 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="25"/>
             <RowDefinition Height="25"/>
-            
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Label Content="DocumentType" Grid.Row="0"/>
-        <sapv:TypePresenter Grid.Row="1" />
-        <!--<Label Content="Name"/>
-        <sapv:ExpressionTextBox x:Name="NameActivity" OwnerActivity="{Binding Path=ModelItem}" Expression="{Binding Path=ModelItem.Name, Mode=TwoWay}"></sapv:ExpressionTextBox>-->
+        
+        <Label Content="Document Type" Grid.Row="0"/>
+        <sapv:TypePresenter Grid.Row="1" Name="TypePresenter" Type="{Binding Path=ModelItem.DocumentType, Mode=TwoWay}" />
+        
+        <Label Content="Document" Grid.Row="2"/>
+        <sapv:ExpressionTextBox Grid.Row="3" Name="Document" ExpressionType="{Binding Path=ModelItem.Document, Mode=TwoWay}"/>
+
     </Grid>
 </sap:ActivityDesigner>

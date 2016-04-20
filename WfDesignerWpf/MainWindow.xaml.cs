@@ -2,17 +2,20 @@
 using System.Activities;
 using System.Activities.Core.Presentation;
 using System.Activities.Presentation;
+using System.Activities.Presentation.Model;
 using System.Activities.Presentation.Toolbox;
 using System.Activities.Presentation.View;
 using System.Activities.Statements;
 using System.Activities.XamlIntegration;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 using System.Windows;
 using System.Windows.Documents;
 using CreateFileWriterActivity;
 using Microsoft.Win32;
+using MyOwnActivityDesigner;
 
 
 namespace WfDesignerWpf
@@ -35,6 +38,68 @@ namespace WfDesignerWpf
             AddPropertyInspector();
         }
 
+        private void MenuItem_Click_Save(object sender, RoutedEventArgs e)
+        {
+            Save();
+        }
+
+        private void MenuItem_Click_SaveAs(object sender, RoutedEventArgs e)
+        {
+            var saveDialog = new SaveFileDialog();
+            if (saveDialog.ShowDialog(this).Value)
+            {
+                _workflowFilePathName = saveDialog.FileName;
+                _workflowDesigner.Save(_workflowFilePathName);
+                MessageBox.Show("Save Ok");
+                Title = $"Workflow Designer - {_workflowFilePathName}";
+            }
+        }
+
+        private void MenuItem_Click_Test(object sender, RoutedEventArgs e)
+        {
+            var items = _workflowDesigner.Context.Items;
+            var selectionView =
+                items.FirstOrDefault(i => i.ItemType.FullName.Equals("System.Activities.Presentation.View.Selection"));
+            var selectedObjects = (selectionView as Selection).SelectedObjects;
+            var selectedItem = selectedObjects.First();
+            var prop = selectedItem.Properties.ToList();
+            var selectedDocumentTypeProp = prop.FirstOrDefault(p => p.Name.Equals("DocumentType"));
+            if (selectedDocumentTypeProp == null)
+            {
+                return;
+            }
+            var documentType = selectedDocumentTypeProp.ComputedValue as Type;
+            var setDocumentPropertiesWindow = new SetDocumentPropertiesWindow();
+            setDocumentPropertiesWindow.DocumentType = documentType;
+            setDocumentPropertiesWindow.ShowDialog();
+            if (setDocumentPropertiesWindow.DocumentPropertiesInfo != null)
+            {
+                var documentProperitesInfo = setDocumentPropertiesWindow.DocumentPropertiesInfo;
+                documentProperitesInfo.ActivityName = _workflowFilePathName;
+                documentProperitesInfo.StageName = (string)prop[3].ComputedValue;
+                documentProperitesInfo.StageId = (string) prop[4].ComputedValue;
+            }
+        }
+
+        private void MenuItem_Click_RunWorkflow(object sender, RoutedEventArgs e)
+        {
+            Save();
+            var activity = GetActivity();
+            var wfApp = new WorkflowApplication(activity);
+            var visualTracking = new VisualTracking(_workflowDesigner);
+            wfApp.Extensions.Add(visualTracking);
+            wfApp.Run();
+        }
+
+        private void TabItem_GotFocus_RefreshXamlBox(object sender, RoutedEventArgs e)
+        {
+            if (_workflowDesigner.Text != null)
+            {
+                _workflowDesigner.Flush();
+                xamlTextBox.Text = _workflowDesigner.Text;
+            }
+        }
+
         private void ImportReferences()
         {
             var path = Properties.Settings.Default.DllsPath;
@@ -44,7 +109,6 @@ namespace WfDesignerWpf
                 var assembly = Assembly.LoadFile(dllFile);
                 AppDomain.CurrentDomain.Load(assembly.GetName());
                 assemblies.Add(assembly);
-
             }
         }
 
@@ -169,42 +233,6 @@ namespace WfDesignerWpf
             ImportReferences();
         }
 
-        private void MenuItem_Click_Save(object sender, RoutedEventArgs e)
-        {
-            Save();
-        }
 
-        private void MenuItem_Click_SaveAs(object sender, RoutedEventArgs e)
-        {
-            var saveDialog = new SaveFileDialog();
-            if (saveDialog.ShowDialog(this).Value)
-            {
-                _workflowFilePathName = saveDialog.FileName;
-                _workflowDesigner.Save(_workflowFilePathName);
-                MessageBox.Show("Save Ok");
-                Title = $"Workflow Designer - {_workflowFilePathName}";
-            }
-        }
-
-        private void MenuItem_Click_RunWorkflow(object sender, RoutedEventArgs e)
-        {
-            Save();
-            var activity = GetActivity();
-            var wfApp = new WorkflowApplication(activity);
-            var visualTracking = new VisualTracking(_workflowDesigner);
-            wfApp.Extensions.Add(visualTracking);
-            wfApp.Run();
-        }
-
-        private void TabItem_GotFocus_RefreshXamlBox(object sender, RoutedEventArgs e)
-        {
-            if (_workflowDesigner.Text != null)
-            {
-                _workflowDesigner.Flush();
-                xamlTextBox.Text = _workflowDesigner.Text;
-            }   
-        }
-
-        
     }
 }
